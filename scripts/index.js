@@ -16,13 +16,13 @@ const createCard = (cardName, cardImage, removeCard) => {
     ".card__image"
   ).alt = `Фотография места: ${cardName}`;
   const deleteButton = cardElement.querySelector(".card__delete-button");
-  deleteButton.addEventListener("click", function () {
+  deleteButton.addEventListener("click", () => {
     removeCard(cardElement);
   });
   return cardElement;
 };
 
-function showCards() {
+const showCards = () => {
   initialCards.forEach((item) => {
     cardList.append(createCard(item.name, item.link, removeCard));
   });
